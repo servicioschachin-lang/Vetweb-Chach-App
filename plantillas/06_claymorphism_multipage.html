@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Alimentos y productos para mascotas. Diseño demo de Claymorphism.">
+<title>POMPÓN & CO. — Claymorphism Pet Food</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap');
+    :root{--bg:#f8e7f6;--accent:#d94f91;--accent2:#4f8dcb;--text:#452746;--muted:#8d6b8d;--line:#d94f9155}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:'Baloo 2',sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}.shell{max-width:1240px;margin:auto;padding:0 5vw}
+    header{display:flex;align-items:center;justify-content:space-between;padding:24px 0;gap:24px}.brand{font-size:1.15rem;font-weight:800;letter-spacing:-.04em;display:flex;align-items:center;gap:10px}.brand-mark{width:35px;height:35px;display:grid;place-items:center;background:var(--accent);color:#f8e7f6;border-radius:12px;font-weight:900}
+    nav{display:flex;gap:26px;align-items:center}nav a{font-size:.88rem;color:var(--muted);font-weight:700}nav a:hover,nav a.active{color:var(--text)}.menu-toggle{display:none;background:transparent;border:1px solid var(--line);color:var(--text);padding:8px 12px;border-radius:10px;font-size:1.2rem}
+    .eyebrow{font-size:.72rem;letter-spacing:.15em;font-weight:800;color:var(--accent);display:inline-block;margin-bottom:15px}.hero{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:5vw;padding:55px 0 80px;min-height:590px}
+    .hero h1{font-size:clamp(2.7rem,5.7vw,5.3rem);line-height:1.01;letter-spacing:-.065em;margin:0 0 23px;font-weight:800}h1 em{font-style:normal;color:var(--accent)}.hero-copy>p{font-size:1.08rem;color:var(--muted);max-width:520px;line-height:1.8}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:13px 19px;border:1px solid var(--line);border-radius:12px;cursor:pointer;font-weight:800;font-size:.9rem;transition:transform .2s,opacity .2s}.btn:hover{transform:translateY(-3px)}.primary{background:var(--accent);color:#f8e7f6;border-color:var(--accent)}.secondary{color:var(--text);background:transparent}
+    .trust{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.78rem;margin-top:24px}.hero-image{position:relative}.hero-image img{width:100%;height:510px;object-fit:cover;display:block;border-radius:28px}.floating-note{position:absolute;bottom:22px;left:-25px;max-width:220px;padding:17px 20px;background:var(--accent);color:#f8e7f6;font-size:.78rem;font-weight:800;border-radius:14px}
+    .section{padding:60px 0 90px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px}h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.055em;margin:0}.section-aside{color:var(--muted);font-size:.85rem}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.product-card{padding:28px;border-radius:22px;background:rgba(255,255,255,.06);border:1px solid var(--line);min-height:220px}.product-icon{font-size:1.8rem;color:var(--accent);margin-bottom:24px}.product-card h3{font-size:1.35rem;margin:8px 0}.product-card p{color:var(--muted);font-size:.9rem;line-height:1.7}.product-card .eyebrow{font-size:.6rem;margin:0}.text-link{display:inline-block;font-weight:800;font-size:.86rem;margin-top:12px;color:var(--accent)}
+    .feature{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center;padding:60px 0 100px}.feature-image img{width:100%;height:400px;object-fit:cover;border-radius:24px}.feature-copy p,.newsletter p{color:var(--muted);line-height:1.8;max-width:490px}.feature-copy h2{margin-bottom:20px}.newsletter{padding:65px 30px 75px;text-align:center;border-top:1px solid var(--line)}.newsletter p{margin:14px auto 25px}.newsletter form{display:flex;gap:10px;max-width:560px;margin:auto;flex-wrap:wrap}input,textarea,select{width:100%;padding:14px 16px;background:transparent;border:1px solid var(--line);border-radius:10px;color:var(--text);outline:none}.newsletter input{flex:1;min-width:200px}.form-msg{display:block;width:100%;font-size:.85rem;color:var(--accent);margin-top:8px}
+    footer{border-top:1px solid var(--line);padding:24px 0 35px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.82rem}.socials{display:flex;gap:10px}.socials a{border:1px solid var(--line);border-radius:50%;width:34px;height:34px;display:grid;place-items:center;font-weight:800;color:var(--text)}
+    .view[hidden]{display:none}.page-heading{padding:75px 0 35px;max-width:760px}.page-heading h1,.about-grid h1,.contact-wrap h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1;letter-spacing:-.06em;margin:0 0 18px}.page-heading p,.about-grid p,.contact-wrap>p{color:var(--muted);font-size:1.05rem}.wide-banner{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:35px;margin:55px 0;background:color-mix(in srgb,var(--accent) 12%,transparent);border-radius:22px}.wide-banner h2{margin-top:8px}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw;align-items:center;padding:85px 0}.about-grid img{width:100%;height:480px;object-fit:cover;border-radius:24px}.about-grid li{padding:8px 0;color:var(--muted)}.contact-wrap{max-width:680px;margin:auto;padding:85px 0 110px}.contact-wrap form{display:grid;gap:13px;margin-top:28px}textarea{min-height:120px;resize:vertical}.contact-wrap .btn{justify-self:start}
+    
+        .hero-image img{border-radius:44% 56% 40% 60% / 48% 40% 60% 52%;box-shadow:inset 10px 10px 25px #fff8,12px 16px 0 var(--accent2)}
+        .product-card{border:0;border-radius:30px;box-shadow:inset 5px 5px 12px #ffffffb0,9px 12px 0 #e9b7ca}
+        .btn{border-radius:22px;box-shadow:inset 3px 3px 7px #ffffff70,0 7px 0 #b84e76}
+        .floating-note{border-radius:22px;box-shadow:0 7px 0 var(--accent2)}
+        
+    @media(max-width:800px){.shell{padding:0 22px}header{padding:17px 0}.menu-toggle{display:block}nav{display:none;position:absolute;top:75px;left:16px;right:16px;z-index:20;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:18px;flex-direction:column;align-items:stretch;gap:17px}nav.open{display:flex}.hero{grid-template-columns:1fr;padding:35px 0 55px;gap:35px;min-height:0}.hero h1{font-size:clamp(2.8rem,13vw,4.5rem)}.hero-image img{height:360px}.floating-note{left:12px}.products{grid-template-columns:1fr}.product-card{min-height:0}.section-head{align-items:start;flex-direction:column}.feature,.about-grid{grid-template-columns:1fr;gap:28px;padding:45px 0 65px}.feature-image img,.about-grid img{height:330px}.newsletter{padding:50px 0}.newsletter form{flex-direction:column}.wide-banner{align-items:start;flex-direction:column;padding:25px}footer{flex-direction:column}.page-heading{padding:55px 0 28px}.trust{gap:10px}}
+    </style></head>
+<body><div class="shell">
+<header><a class="brand" href="#inicio"><span class="brand-mark">✳</span>POMPÓN & CO.</a>
+<button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false" onclick="document.querySelector('nav').classList.toggle('open');this.setAttribute('aria-expanded',document.querySelector('nav').classList.contains('open'))">☰</button>
+<nav><a href="#inicio" data-page="inicio">Inicio</a><a href="#productos" data-page="productos">Productos</a><a href="#nosotros" data-page="nosotros">Nosotros</a><a href="#contacto" data-page="contacto">Contacto</a></nav></header>
+
+        <main>
+          <section class="view" data-view="inicio">
+            <div class="hero"><div class="hero-copy"><span class="eyebrow">PET PANTRY / HAPPY DAYS</span><h1>Más sabor. Más juego. Más abrazos.</h1><p>Una tienda alegre para descubrir comida, premios y pequeños tesoros para tu mejor amigo.</p><div class="actions"><button class="btn primary" data-go="productos">Descubrir la tienda ↗</button><button class="btn secondary" data-go="nosotros">Nuestra filosofía</button></div><div class="trust"><span>✦ Ingredientes seleccionados</span><span>✦ Para cada etapa</span></div></div><div class="hero-image"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1400&q=85" alt="Mascota feliz junto a sus alimentos"><div class="floating-note">UN CLUB PARA CONSENTIR</div></div></div>
+            <section class="section"><div class="section-head"><div><span class="eyebrow">UNA BUENA ELECCIÓN</span><h2>Lo que mueve sus días.</h2></div><button class="btn secondary" data-go="productos">Ver colección ↗</button></div><div class="products">
+      <article class="product-card">
+        <div class="product-icon">✦</div>
+        <span class="eyebrow">FAVORITO DE LA CASA</span><h3>Bowl de croquetas</h3>
+        <p>Una opción deliciosa para sumar bienestar a su rutina diaria.</p>
+        <a href="#contacto" class="text-link">Descubrir producto ↗</a>
+      </article>
+      <article class="product-card">
+        <div class="product-icon">◉</div>
+        <span class="eyebrow">FAVORITO DE LA CASA</span><h3>Premios de fruta</h3>
+        <p>Una opción deliciosa para sumar bienestar a su rutina diaria.</p>
+        <a href="#contacto" class="text-link">Descubrir producto ↗</a>
+      </article>
+      <article class="product-card">
+        <div class="product-icon">♡</div>
+        <span class="eyebrow">FAVORITO DE LA CASA</span><h3>Peluche nube</h3>
+        <p>Una opción deliciosa para sumar bienestar a su rutina diaria.</p>
+        <a href="#contacto" class="text-link">Descubrir producto ↗</a>
+      </article></div></section>
+          </section>
+          <section class="view" data-view="productos" hidden><div class="page-heading"><span class="eyebrow">NUESTRA SELECCIÓN</span><h1>Encuentra su nuevo favorito.</h1><p>Productos pensados para acompañar cada momento del día.</p></div><div class="products">
+      <article class="product-card">
+        <div class="product-icon">✦</div>
+        <span class="eyebrow">FAVORITO DE LA CASA</span><h3>Bowl de croquetas</h3>
+        <p>Una opción deliciosa para sumar bienestar a su rutina diaria.</p>
+        <a href="#contacto" class="text-link">Descubrir producto ↗</a>
+      </article>
+      <article class="product-card">
+        <div class="product-icon">◉</div>
+        <span class="eyebrow">FAVORITO DE LA CASA</span><h3>Premios de fruta</h3>
+        <p>Una opción deliciosa para sumar bienestar a su rutina diaria.</p>
+        <a href="#contacto" class="text-link">Descubrir producto ↗</a>
+      </article>
+      <article class="product-card">
+        <div class="product-icon">♡</div>
+        <span class="eyebrow">FAVORITO DE LA CASA</span><h3>Peluche nube</h3>
+        <p>Una opción deliciosa para sumar bienestar a su rutina diaria.</p>
+        <a href="#contacto" class="text-link">Descubrir producto ↗</a>
+      </article></div><div class="wide-banner"><div><span class="eyebrow">¿NO SABES POR DÓNDE EMPEZAR?</span><h2>Te ayudamos a elegir.</h2></div><button class="btn primary" data-go="contacto">Pedir recomendación ↗</button></div></section>
+          <section class="view" data-view="nosotros" hidden><div class="about-grid"><img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1400&q=85" alt="Mascota en un ambiente natural"><div><span class="eyebrow">NUESTRA FILOSOFÍA</span><h1>El bienestar vive en los pequeños hábitos.</h1><p>Una tienda alegre para descubrir comida, premios y pequeños tesoros para tu mejor amigo. Creemos en la transparencia, la cercanía y en hacer que cada elección sea un gesto de cariño.</p><ul><li>Ingredientes seleccionados con atención.</li><li>Opciones para distintas etapas de vida.</li><li>Una experiencia sencilla para toda la familia.</li></ul><button class="btn primary" data-go="productos">Conocer productos ↗</button></div></div></section>
+          <section class="view" data-view="contacto" hidden><div class="contact-wrap"><span class="eyebrow">HABLEMOS</span><h1>¿En qué podemos ayudarte?</h1><p>Cuéntanos un poco y nuestro equipo te orientará.</p><form onsubmit="event.preventDefault();this.querySelector('.form-msg').textContent='¡Gracias! Tu mensaje está listo para enviarse.'"><input required placeholder="Tu nombre"><input type="email" required placeholder="Correo electrónico"><select><option>Quiero información de productos</option><option>Necesito ayuda para elegir</option><option>Otra consulta</option></select><textarea placeholder="Escribe tu mensaje"></textarea><button class="btn primary">Enviar mensaje ↗</button><span class="form-msg"></span></form></div></section>
+        </main>
+<footer><span>© 2026 POMPÓN & CO.. Demo conceptual para mascotas.</span><div class="socials"><a href="https://instagram.com" aria-label="Instagram">ig</a><a href="https://facebook.com" aria-label="Facebook">f</a><a href="https://tiktok.com" aria-label="TikTok">♪</a></div><span>Hecho para colitas felices ♡</span></footer>
+</div>
+<script>
+
+    const links=[...document.querySelectorAll('[data-page]')];
+    function showPage(page){
+      document.querySelectorAll('[data-view]').forEach(v=>v.hidden = v.dataset.view!==page);
+      links.forEach(a=>a.classList.toggle('active',a.dataset.page===page));
+      document.querySelector('.menu')?.classList.remove('open');
+      window.scrollTo({top:0,behavior:'smooth'});
+      if(location.hash !== '#'+page) history.replaceState(null,'','#'+page);
+    }
+    links.forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showPage(a.dataset.page)}));
+    const initial=location.hash.slice(1);
+    showPage(['inicio','productos','nosotros','contacto'].includes(initial)?initial:'inicio');
+    
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
+</script></body></html>
